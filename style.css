@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --para-font: 14px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    /* height: 100vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    background-color: hsl(30, 38%, 92%);
+    width: 90%;
+    /* height: 100vh; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    'image'
+    'details'
+    ;
+}
+
+main{
+    margin: 20px 0;
+    padding-bottom: 30px;
+}
+
+
+main .image{
+    grid-area: image;
+    border-radius: 12px 12px 0 0;
+    margin-bottom:10px ;
+}
+
+main .details{
+    grid-area: details;
+    
+}
+
+main .image{
+    height: 450px;
+    background-image: url(./images/image-product-mobile.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main .details{
+    padding: 0;
+    display: grid;
+    gap: 10px  ;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: minmax(10px, auto);
+    padding: 0 30px;
+}
+
+main .details-tittle{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: hsl(228, 12%, 48%);
+    padding: 10px 0;
+    font-weight: 500;
+    letter-spacing: 5px; 
+}
+
+main .details-decription-tittle,
+main .details-price{
+    font-family: 'Fraunces', sans-serif;
+}
+
+main .details-decription-tittle,
+main .details-price,
+main .details-para{
+    padding: 10px 35px;
+}
+
+
+main .details-decription-tittle{
+    font-size: 2.6rem;
+    font-weight: bolder;
+}
+
+
+
+main .details-para{
+    color: hsl(228, 12%, 48%);
+    font-size: var(--para-font);
+    line-height: 25px;
+}
+
+main .details-price{
+    color: hsl(158, 36%, 37%);
+    font-weight: 800;
+}
+
+main .details-price sup{
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: line-through;
+    font-size: var(--para-font);
+}
+
+main .details-add-to-cart{
+    width: 300px;
+    margin: 0 auto;
+    background-color: hsl(158, 36%, 37%);
+    height: 45px;
+    color: hsl(0, 0%, 100%);
+    font-size: 1.4rem;
+    font-weight: bolder;
+    border-radius: 12px;
+    border-width: 0;
+}
+
+
+@media  screen and (min-width:576px) {
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0px auto;
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        'image details'
+        ;
+        padding: 0;
+        width: 800px;
+        margin-top: 70px;
+    }
+
+    main .image{
+        background-image: url(./images/image-product-desktop.jpg);
+        border-radius: 12px 0 0px 12px;
+        margin: 0;
+    }
+
+    main .image,
+    main .details{
+        height: 470px;
+        
+    }
+
+    main .details{
+        
+        background-color: hsl(0, 0%, 100%);
+        box-shadow: 0px 0px 1px 1px hsl(30, 38%, 92%);
+        border-radius: 0 12px 12px 0px;
+    }
+
+    main .details-decription-tittle,
+main .details-price,
+main .details-para{
+    padding: 5px 30px;
+}
+    
+}
